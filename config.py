@@ -1,3 +1,7 @@
+import pymongo
+import certifi
+
+
 developer = {
     "first":"Eduardo",
     "last":"Rodriguez",
@@ -12,3 +16,5 @@ developer = {
 
 
 con_str = "mongodb+srv://edurodgzusmc:Test1234@cluster0.qlc5qbo.mongodb.net/?retryWrites=true&w=majority"
+client = pymongo.MongoClient(con_str, tlsCAFile=certifi.where())
+db = client.get_database("bootpog")
